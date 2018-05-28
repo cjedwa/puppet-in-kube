@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: puppet-agent
+  labels:
+    app: puppet-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: puppet-agent
+  template:
+    metadata:
+      labels:
+        app: puppet-agent
+    spec:
+      containers:
+      - name: puppet-agent
+        image: cjedwa/puppet-agent
+        livenessProbe:
+          exec:
+            command:
+              - /health.sh
+          initialDelaySeconds: 10
+          periodSeconds: 10

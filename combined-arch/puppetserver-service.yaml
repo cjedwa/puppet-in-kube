@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: puppetserver
+  name: puppet
+spec:
+  ports:
+  - name: "8140"
+    port: 8140
+    targetPort: 8140
+  selector:
+    app: puppetserver

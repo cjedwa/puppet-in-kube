@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: puppetserver
+  name: puppet
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: puppetserver
+    spec:
+      containers:
+        - name: puppetserver
+          image: puppet/puppetserver-standalone
+          ports:
+            - containerPort: 8140
+      restartPolicy: Always
