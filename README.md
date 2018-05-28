@@ -9,3 +9,4 @@ Clunky use of dumb init, fix that later.
 * integrate serverspec stuff for testing
 * Maybe build nginx reverse proxy to display check results
 * test multi agent builds with various services. Maybe get ipsec tunnels up between containers or elasticsearch cross cluster searches working.
+* build some helm action
